@@ -28,7 +28,7 @@ exports.insert_data = (req, res) => {
 }
 exports.edit_data = (req, res) => {
   const { nama } = req.body;
-  connection.query("UPDATE `calonkandidat` SET `nama` = 'askdsn' WHERE `calonkandidat`.`id` = 229;", 
+  connection.query("UPDATE `calonkandidat` SET `nama` = '" + "jokwi" +"' WHERE `calonkandidat`. `" + "id" + "` = " + 229 + ";", 
     (err) => {if (err) {res.send(err)}}
   )
-}
+}  

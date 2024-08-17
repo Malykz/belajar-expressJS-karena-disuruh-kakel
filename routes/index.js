@@ -16,7 +16,7 @@ router.route('/p')
   .post((req, res, next) => {
     res.render("test/form")
     next()
-  }, anm.insert_data)
+  }, anm.edit_data)
 
 
 
