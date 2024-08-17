@@ -1,5 +1,5 @@
 const connection = require("../models/mahasiswa")
-
+import { Mahasiswa } from "../models/mahasiswa"
 var exports = module.exports = {}
 
 exports.get_anime_information = async (req, res) => {
@@ -15,6 +15,12 @@ exports.get_data_from_database = (req, res) => {
         } else {
           res.send(rows)
         }      })
+}
+
+exports.test_database = (req, res) => {
+  let murid = new Mahasiswa()
+  res.send(murid.getAllData())
+  
 }
 
 exports.insert_data = (req, res) => {

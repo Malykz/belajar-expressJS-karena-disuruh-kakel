@@ -1,20 +1,15 @@
-const mysql = require('mysql')
-const { insert_data } = require('../controllers/animeController')
+var connection = require("../database/mahasiswaDb")
 require('dotenv').config()
 
-let connection = mysql.createConnection({
-    host: process.env.DB_USERNAME.toString(),
-    user: process.env.DB_USER.toString(),
-    password: process.env.DB_PASSWORD.toString(),
-    database: process.env.DB_DATABASE.toString()
-})
 
-connection.connect((error) => {
-    if(!error) {
-        console.log(error)
-    } else {
-        console.log("Connected")
+export class Mahasiswa {
+    getAllData(self) {
+        connection.query('SELECT * FROM calonkandidat ORDER BY id desc', (err, rows) => {
+            if (err) {
+              return err;
+            } else {
+              return rows;
+            }      })
     }
-})
 
-module.exports = connection; 
+}

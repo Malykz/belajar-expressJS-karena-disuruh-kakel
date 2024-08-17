@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var anm = require('../controllers/animeController')
-var models = require("../models/mahasiswa")
 
 router.get('/', function(req, res) {
   res.render('test/index', { title: 'Express' });
@@ -9,6 +8,8 @@ router.get('/', function(req, res) {
 
 router.get('/cari/:judul', anm.get_anime_information)
 router.get('/database', anm.get_data_from_database)
+
+router.get('/db', anm.test_database)
 
 
 router.route('/p')
