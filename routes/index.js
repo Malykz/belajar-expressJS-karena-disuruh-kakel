@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var anm = require('../controllers/animeController')
+var models = require("../models/mahasiswa")
 
 router.get('/', function(req, res) {
   res.render('test/index', { title: 'Express' });
@@ -12,10 +13,12 @@ router.get('/database', anm.get_data_from_database)
 
 router.route('/p')
   .get((req, res) => res.render("test/form"))
-  .post((req, res) => {
-    const { username } = req.body
-    res.render("test/form", {title : username})
-  })
+  .post((req, res, next) => {
+    res.render("test/form")
+    next()
+  }, anm.insert_data)
+
+
 
 router.get('/tugas', (req, res) => {
   res.render("tugas", {title : "Bangsa Indonesia"})

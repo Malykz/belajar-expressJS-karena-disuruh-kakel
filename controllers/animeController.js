@@ -14,6 +14,21 @@ exports.get_data_from_database = (req, res) => {
           res.send(err)
         } else {
           res.send(rows)
-        }
-      })
+        }      })
+}
+
+exports.insert_data = (req, res) => {
+  const { name } = req.body;
+  
+  connection.query("INSERT INTO `calonkandidat` (`id`, `nama`, `kelas`, `NomorHp`, `accRules`, `date`) VALUES (NULL,'" + name + "', '2', '349857', '1', '');" , (err) => {
+    if (err) {
+      res.send(err)
+    }
+  })
+}
+exports.edit_data = (req, res) => {
+  const { nama } = req.body;
+  connection.query("UPDATE `calonkandidat` SET `nama` = 'askdsn' WHERE `calonkandidat`.`id` = 229;", 
+    (err) => {if (err) {res.send(err)}}
+  )
 }
