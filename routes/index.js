@@ -4,7 +4,7 @@ var anm = require('../controllers/animeController')
 var connection = require('../models/mahasiswa')
 
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('test/index', { title: 'Express' });
 });
 
 router.get('/cari/:judul', anm.get_anime_information)
