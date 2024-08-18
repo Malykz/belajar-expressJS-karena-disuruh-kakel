@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var anm = require('../controllers/animeController')
+var siswa = require('../controllers/siswaController')
 
 router.get('/', function(req, res) {
   res.render('test/index', { title: 'Express' });
@@ -8,16 +9,14 @@ router.get('/', function(req, res) {
 
 router.get('/cari/:judul', anm.get_anime_information)
 router.get('/database', anm.get_data_from_database)
-
 router.get('/db', anm.test_database)
 
-
-// router.route('/p')
-//   .get((req, res) => res.render("test/form"))
-//   .post((req, res, next) => {
-//     res.render("test/form")
-//     next()
-//   }, anm.edit_data)
+router.route('/p')
+  .get((req, res) => res.render("test/form", {title : "None"}))
+  .post((req, res, next) => {
+    res.render("test/form", {title : "Nothing"})
+    next()
+  }, siswa.insert_data) 
 
 
 
