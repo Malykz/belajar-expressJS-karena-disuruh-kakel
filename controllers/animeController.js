@@ -19,7 +19,13 @@ exports.get_data_from_database = (req, res) => {
 
 exports.test_database = (req, res) => {
   let murid = new Mahasiswa()
-  res.send(murid.getAllData())
+  res.send(murid.getAllData((err, data) => {
+    if (err) {
+      console.error('Error' , err)
+    } else {
+      console.log('Data' , data)
+    }
+   }))
   
 }
 

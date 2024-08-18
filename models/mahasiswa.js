@@ -3,12 +3,12 @@ require('dotenv').config()
 
 
 export class Mahasiswa {
-    getAllData(self) {
+    getAllData(callback) {
         connection.query('SELECT * FROM calonkandidat ORDER BY id desc', (err, rows) => {
             if (err) {
-              return err;
+              return callback(err, null);
             } else {
-              return rows;
+              return callback(null, rows);
             }      })
     }
 

@@ -12,12 +12,12 @@ router.get('/database', anm.get_data_from_database)
 router.get('/db', anm.test_database)
 
 
-router.route('/p')
-  .get((req, res) => res.render("test/form"))
-  .post((req, res, next) => {
-    res.render("test/form")
-    next()
-  }, anm.edit_data)
+// router.route('/p')
+//   .get((req, res) => res.render("test/form"))
+//   .post((req, res, next) => {
+//     res.render("test/form")
+//     next()
+//   }, anm.edit_data)
 
 
 
