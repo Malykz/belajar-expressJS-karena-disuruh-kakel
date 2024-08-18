@@ -15,9 +15,10 @@ Siswa.init(
     },
   },
   {
-    sequelize, 
+    sequelize,
     modelName: 'Siswa', 
   },
 );
 
-console.log(Siswa === sequelize.models.Siswa)
+console.log(Siswa === sequelize.models.Siswa);
+module.exports = { Siswa }
