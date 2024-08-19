@@ -7,9 +7,6 @@ router.get('/', function(req, res) {
   res.render('test/index', { title: 'Express' });
 });
 
-
-
-
 router.get('/db/:ide', siswa.select_by_attr)
 
 router.route('/p')
