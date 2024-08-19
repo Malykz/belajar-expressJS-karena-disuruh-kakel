@@ -4,6 +4,7 @@ const { sequelize } = require('../database/mainDatabase')
 
 class Siswa extends Model {}
 
+// Schema Siswa
 Siswa.init(
   {
     firstName: {

@@ -1,22 +1,23 @@
-import { query } from "express";
+const { Model, DataTypes } = require('sequelize')
+const { sequelize } = require('../database/mainDatabase')
 
-var connection = require("../database/mahasiswaDb")
-require('dotenv').config()
+class Mahasiswa extends Model {}
 
+// Schema Mahasiswa
+Mahasiswa.init(
+  {
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastName: {
+      type: DataTypes.STRING,
+    },
+  },
+  {
+    sequelize,
+    modelName: 'Mahasiswa'
+  }
+)
 
-export class Mahasiswa {
-    getAllData(callback) {
-        connection.query('SELECT * FROM calonkandidat ORDER BY id desc', (err, rows) => {
-            if (err) {
-              return callback(err, null);
-            } else {
-              return callback(null, rows);
-            }      })
-    }
-
-
-    editData(data) {
-      query
-    }
-
-}
+console.log(Mahasiswa === sequelize.models.Mahasiswa)

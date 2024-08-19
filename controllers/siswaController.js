@@ -8,7 +8,20 @@ exports.insert_data = async (req, res, next) => {
         firstName: firstName,
         lastName: lastName
     })
-    // res.send(siswa)
     console.log(siswa.createdAt)
     next()
+}
+
+exports.select_all_data = async (req, res) => {
+    const siswa = await Siswa.findAll()
+    res.json(siswa)
+}
+
+exports.select_by_attr = async (req, res) => {
+    const siswa = await Siswa.findAll({
+        where: {
+            id: req.params.ide
+        }
+    })
+    res.json(siswa)
 }

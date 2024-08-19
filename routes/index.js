@@ -7,9 +7,10 @@ router.get('/', function(req, res) {
   res.render('test/index', { title: 'Express' });
 });
 
-router.get('/cari/:judul', anm.get_anime_information)
-router.get('/database', anm.get_data_from_database)
-router.get('/db', anm.test_database)
+
+
+
+router.get('/db/:ide', siswa.select_by_attr)
 
 router.route('/p')
   .get((req, res) => res.render("test/form", {title : "None"}))
@@ -34,3 +35,4 @@ router.get('/kelas', (req, res) => {
 })
 
 module.exports = router;
+
