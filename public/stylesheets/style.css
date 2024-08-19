@@ -5,6 +5,36 @@ body {
   margin: 0;
 }
 
+/* Gaya untuk tabel */
+table {
+  width: 50vw;
+  border-collapse: collapse;
+}
+
+/* Gaya untuk header tabel */
+th {
+  background-color: #f2f2f2;
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+/* Gaya untuk sel tabel */
+td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Gaya untuk baris tabel */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #e2e2e2;
+}
+
+
 .nav {
   width: 100vw;
   height: 50px;

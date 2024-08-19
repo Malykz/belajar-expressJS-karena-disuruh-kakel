@@ -15,4 +15,3 @@ module.exports = (sequelize, DataTypes) => {
   return Mahasiswa;
 };
 
-"npx sequelize-cli model:generate --name Teacher --attributes name:string,jabatan:string,email:string"
