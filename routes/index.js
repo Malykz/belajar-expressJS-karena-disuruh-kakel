@@ -9,27 +9,13 @@ router.get('/', function(req, res) {
 
 router.get('/db/:ide', siswa.select_by_attr)
 
-router.route('/p')
-  .get((req, res) => res.render("test/form", {title : "None"}))
-  .post((req, res, next) => {
-    res.render("test/form", {title : "Nothing"})
-    next()
-  }, siswa.insert_data) 
+router.get('/p', (req, res) => {
+  res.render("test/form", {title : "Form"})
+})
 
+router.get('/p/data', siswa.select_all_data)
+router.post('/p/data', siswa.select_by_attr)
 
-
-router.get('/tugas', (req, res) => {
-  res.render("tugas", {title : "Bangsa Indonesia"})
-})
-router.get('/home', (req, res) => {
-  res.render("tugas", {title : "Home"})
-})
-router.get('/saya', (req, res) => {
-  res.render("tugas", {title : "Saya"})
-})
-router.get('/kelas', (req, res) => {
-  res.render("tugas", {title : "Kelas"})
-})
 
 module.exports = router;
 

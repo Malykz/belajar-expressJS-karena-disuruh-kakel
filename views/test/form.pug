@@ -1,8 +1,19 @@
 extends ../layout
 
 block content
-  form(method="post" required)
-    input(type="text" name="firstName" required)
-    input(type="text" name="lastName" required)
+  form(method="post" required action="http://localhost:3000/p/data")
+    input(type="text" name="name" placeholder="cari nama" required)
     button(type="submit") Kirim
 
+  .main
+    if typeof data !== "undefined"
+      table
+        thead 
+            tr
+              th nama
+              th jurusan
+        tbody
+          each i in data  
+            tr
+              td=i.fullName
+              td=i.jurusan
