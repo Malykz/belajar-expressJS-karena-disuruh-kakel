@@ -7,13 +7,16 @@ class Siswa extends Model {}
 // Schema Siswa
 Siswa.init(
   {
-    firstName: {
+    fullName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    lastName: {
+    class: {
       type: DataTypes.STRING,
     },
+    age: {
+      type: DataTypes.INTEGER,
+    }
   },
   {
     sequelize,
@@ -21,5 +24,8 @@ Siswa.init(
   },
 );
 
-console.log(Siswa === sequelize.models.Siswa);
+if (Siswa === sequelize.models.Siswa) {
+  console.log("Models Siswa Ready")
+}
+
 module.exports = { Siswa }
