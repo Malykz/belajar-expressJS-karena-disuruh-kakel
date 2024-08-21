@@ -23,8 +23,5 @@
     "mysql2": "^3.11.0",
     "pug": "^3.0.3",
     "sequelize": "^6.37.3"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.4.10"
   }
 }
