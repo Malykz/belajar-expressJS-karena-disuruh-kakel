@@ -2,7 +2,7 @@ var exports = module.exports = {}
 const models = require("../models")
 
 // GET
-exports.uppload_komen = async (req, res, next) => {
+exports.upload_komen = async (req, res, next) => {
     res.render("form/uploadkomen", {
         title: "Pernah kah kau merasa?",
     })

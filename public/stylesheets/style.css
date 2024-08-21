@@ -1,8 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
+}
+
+#cont_upload_komen {
+  max-width: 500px;
+  min-width: 300px;
 }
 
 /* Gaya untuk tabel */
