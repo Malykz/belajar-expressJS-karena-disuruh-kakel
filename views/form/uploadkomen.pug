@@ -1,6 +1,19 @@
 extends ../layout
 
 block content 
-    .content(class="text-white bg-blue-500 flex justify-center h-[100px] items-center")
-        h3 ANIES ANJING!
-    
+    #form_uploadkomen
+        .formulir
+            form(method="post" action=base_url).mt-4 
+                h3 Haya Susanti
+                .mb-3.mt-4 
+                    label(for="username").form-label Name(Opsional)
+                    input#username(type="text" name="name" placeholder="name" autocomplete="off").form-control
+
+                .mb-3 
+                    label(for="comment").form-laabel Comment    
+                    input#comment(type="textare" placeholder="komen" name="komen" rows="3" autocomplete="off").form-control
+
+                button.btn.btn-primary Submit      
+        
+  
+
