@@ -1,8 +1,19 @@
+# Lock
 package-lock.json
+
+# Modules
 node_modules
+
+# Environment
 .env
 test
-config
+config/config.json
+
+# Individually
 note.txt
+
+
+
+# SCSS
 public/stylesheets/style_sass.css
 public/stylesheets/style_sass.css.map

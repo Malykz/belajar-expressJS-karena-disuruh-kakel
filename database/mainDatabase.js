@@ -1,14 +1,14 @@
 const { Sequelize } = require('sequelize')
-require('dotenv').config()
+// Dont forget to create the directory
+const config = require('../config/config.json').production 
 
-const username = process.env.DB_USER.toString()
-const password = process.env.DB_PASSWORD.toString()
-// const database = process.env.DB_DATABASE.toString()
-const database = "test1"
+const username = config.username
+const password = config.password
+const database = config.database
 
 const sequelize = new Sequelize(database, username, password, {
-    host: 'localhost',
-    dialect: 'mysql'
+    host: config.host,
+    dialect: config.dialect
   });
   
 module.exports = { sequelize }
