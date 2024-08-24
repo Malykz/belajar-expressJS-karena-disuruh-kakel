@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    .form_uploadkomen
+        .formulir
+            form(method="post" action=base_url).mt-4 
+                h3 Silahkan Login
+                .mb-3.mt-4 
+                    label(for="name").form-label Name(Opsional)
+                    input#username(type="text" name="name" placeholder="name" autocomplete="off").form-control
+
+                .mb-3 
+                    label(for="password").form-laabel Password    
+                    input#comment(type="text" placeholder="komen" name="password" rows="3" autocomplete="off").form-control
+
+                button.btn.btn-primary Submit   

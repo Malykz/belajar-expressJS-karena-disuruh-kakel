@@ -5,7 +5,8 @@ require('dotenv').config()
 exports.upload_komen = async (req, res, next) => {
     res.render("form/uploadkomen", {
         title: "Pernah kah kau merasa?",
-        base_url: "/komen/upp"
+        base_url: "/komen/upp",
+        name: req.user.name
     })
     next()
 }
