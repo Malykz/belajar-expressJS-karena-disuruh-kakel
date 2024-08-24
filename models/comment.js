@@ -2,9 +2,8 @@
 const {
   Model
 } = require('sequelize');
-const blogpost = require('./blogpost');
 module.exports = (sequelize, DataTypes) => {
-  class randomKomen extends Model {
+  class comment extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,14 +12,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
     }
   }
-  randomKomen.init({
-    name: DataTypes.STRING,
-    pesan: DataTypes.STRING,
-    BlogId: DataTypes.INTEGER
+  comment.init({
+    comment: DataTypes.TEXT,
+    commenter: DataTypes.STRING,
+    blogpost_id: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'randomKomen',
+    modelName: 'comment',
   });
-  return randomKomen;
-
+  return comment;
 };
