@@ -21,8 +21,9 @@ exports.get_komen = async (req, res, next) => {
 // POST
 exports.send_komen = async (req, res, next) => {
     const { name, komen } = req.body;
+    let nama_pengirim = name + "@" + req.user.name
     models.randomKomen.create({
-        name: name,
+        name: nama_pengirim,
         pesan: komen,
     })
     res.redirect('/komen/komentar')
