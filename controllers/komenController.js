@@ -13,7 +13,7 @@ exports.upload_komen = async (req, res, next) => {
 
 exports.get_komen = async (req, res, next) => {
     res.render("form/allkomen", ({
-        title: "CITO CITO II SONI",
+        title: "Daftar Komen",
         data: await models.randomKomen.findAll()
     }))
 }
