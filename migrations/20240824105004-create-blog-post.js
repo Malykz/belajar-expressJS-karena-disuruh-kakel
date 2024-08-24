@@ -1,35 +1,32 @@
 'use strict';
-
-const { DataTypes, Model } = require('sequelize');
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('randomKomens', {
+    await queryInterface.createTable('BlogPosts', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      caption: {
         type: Sequelize.STRING
       },
-      pesan: {
+      img_url: {
         type: Sequelize.STRING
       },
-
+      author: {
+        type: Sequelize.STRING
+      },
+      comments: {
+        type: Sequelize.STRING
+      },
+      likes: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
-      },
-      BlogId: {
-        type: Sequelize.STRING,
-        allowNull: true,
-        references: {
-          Model: "BlogPost",
-          key: "id"
-        }
       },
       updatedAt: {
         allowNull: false,
@@ -38,6 +35,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('randomKomens');
+    await queryInterface.dropTable('BlogPosts');
   }
 };

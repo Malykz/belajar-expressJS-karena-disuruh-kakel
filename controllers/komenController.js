@@ -29,3 +29,4 @@ exports.send_komen = async (req, res, next) => {
     res.redirect('/komen/komentar')
     next()
 }
+
