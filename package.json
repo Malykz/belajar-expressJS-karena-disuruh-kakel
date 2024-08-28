@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "node test/test.js",
-    "dev": "nodemon ./bin/www --exec babel-node"
+    "dev": "nodemon ./bin/www --exec babel-node",
+    "css": "sass --watch ./public/sass/style.scss ./public/stylesheets/style_sass.css",
+    "all": "concurrently \"npm run dev\" \"npm run css\""
   },
   "dependencies": {
     "@babel/cli": "^7.24.8",
@@ -23,6 +25,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^3.11.0",
     "pug": "^3.0.3",
-    "sequelize": "^6.37.3"
+    "sequelize": "^6.37.3",
+    "uniqid": "^5.4.0"
   }
 }

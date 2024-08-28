@@ -12,20 +12,26 @@ exports.upload_komen = async (req, res, next) => {
 }
 
 exports.get_komen = async (req, res, next) => {
-    res.render("form/allkomen", ({
-        title: "Daftar Komen",
-        data: await models.randomKomen.findAll()
-    }))
+    let data = await models.blogpost.findOne({
+        where: { id: 1 },
+        include: models.comment
+    })
+    res.render("form/allkomen", {
+        title : "wahyu",
+        data : data,
+        raw_data : data.comments
+    })
 }
-
 // POST
 exports.send_komen = async (req, res, next) => {
     const { name, komen } = req.body;
     let nama_pengirim = name + "@" + req.user.name
-    models.randomKomen.create({
-        name: nama_pengirim,
-        pesan: komen,
-    })
+    const send = async () => {
+        const x = await models.comment.create({
+            name: nama_pengirim,
+            pesan: komen,
+    })}
+    console.log(send)
     res.redirect('/komen/komentar')
     next()
 }

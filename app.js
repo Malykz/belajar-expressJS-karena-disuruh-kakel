@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 
-// Route has been set
+// Routes
 app.use('/login', require('./routes/login'))
 app.use('/komen', require('./routes/komen'))
 

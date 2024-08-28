@@ -18,6 +18,9 @@ module.exports = {
       commenter: {
         type: Sequelize.STRING
       },
+      blogpost_id: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

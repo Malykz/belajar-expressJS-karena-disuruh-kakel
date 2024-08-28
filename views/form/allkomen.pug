@@ -1,7 +1,8 @@
 extends ../layout
 
-block content 
-    each i in data
-        h3=i.name 
-        h1=i.pesan
-        <br>
+block content
+    #form_allkomen
+        h1=data.author
+        br
+        each i in raw_data
+            h3 - #{i.comment}
