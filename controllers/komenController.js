@@ -12,20 +12,20 @@ exports.upload_komen = async (req, res, next) => {
 }
 
 exports.get_komen = async (req, res, next) => {
-    let data = await models.blogpost.findOne({
-        where: { id: 1 },
+    let data = await models.blogpost.findAll({
         include: models.comment
     })
+
+
     res.render("form/allkomen", {
         title : "wahyu",
         data : data,
-        raw_data : data.comments
     })
 }
 // POST
 exports.send_komen = async (req, res, next) => {
     const { name, komen } = req.body;
-    let nama_pengirim = name + "@" + req.user.name
+    let nama_pengirim = name 
     const send = async () => {
         const x = await models.comment.create({
             name: nama_pengirim,

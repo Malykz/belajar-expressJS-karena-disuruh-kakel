@@ -1,8 +1,9 @@
 extends ../layout
 
 block content
-    #form_allkomen
-        h1=data.author
-        br
-        each i in raw_data
-            h3 - #{i.comment}
+        each d in data 
+            h1=d.author
+            each i in d.comments
+                h4 #{i.comment}
+                br
+                
