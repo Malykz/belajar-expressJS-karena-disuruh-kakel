@@ -26,6 +26,7 @@ app.use('/', indexRouter);
 // Routes
 app.use('/login', require('./routes/login'))
 app.use('/komen', require('./routes/komen'))
+app.use('/blog', require('./routes/blog'))
 
 // Middleware 
 

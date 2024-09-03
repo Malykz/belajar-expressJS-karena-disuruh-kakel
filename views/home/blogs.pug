@@ -1,0 +1,17 @@
+extends ../layout
+
+block content     
+ #home_blogs
+  .blog-container
+   each blog in blogs
+    .blog.mt-4
+     .head
+      .userInf
+       .profilePic
+       .text
+        span.author #{blog.author} 
+        span.date 28 August 2024
+      span.caption #{blog.caption} 
+     .body
+      .image 
+       img(src=blog.img_url)

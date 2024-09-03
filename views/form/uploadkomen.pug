@@ -1,6 +1,4 @@
-extends ../layout
 
-block content 
     #form_uploadkomen
         .formulir
             form(method="post" id="form_1" action="/komen/post").mt-4 
@@ -9,7 +7,7 @@ block content
                     label(for="username").form-label Name(Opsional)
                     input#username(type="text" name="name" placeholder="name" autocomplete="off").form-control
 
-                .mb-3 
+                .mb-3               
                     label(for="comment").form-label Comment    
                     input#comment(type="textarea" placeholder="komen" name="komen" rows="3" autocomplete="off").form-control
 

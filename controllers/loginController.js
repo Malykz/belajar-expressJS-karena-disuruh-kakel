@@ -11,8 +11,6 @@ exports.login = (req, res, next) => {
     })
     next()
 }
-
-
 // POST
 exports.create_login = (req, res, next) => {
     const {name, password} = req.body;

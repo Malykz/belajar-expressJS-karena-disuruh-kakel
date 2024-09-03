@@ -10,9 +10,6 @@ exports.upload_komen = async (req, res, next) => {
     })
     next()
 }
-
-
-
 exports.get_komen = async (req, res, next) => {
     let data = await models.blogpost.findAll({
         include: models.comment
