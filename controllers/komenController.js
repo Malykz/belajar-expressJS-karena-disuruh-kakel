@@ -11,6 +11,8 @@ exports.upload_komen = async (req, res, next) => {
     next()
 }
 
+
+
 exports.get_komen = async (req, res, next) => {
     let data = await models.blogpost.findAll({
         include: models.comment
@@ -25,14 +27,20 @@ exports.get_komen = async (req, res, next) => {
 // POST
 exports.send_komen = async (req, res, next) => {
     const { name, komen } = req.body;
-    let nama_pengirim = name 
-    const send = async () => {
+    const send = async (a, b) => {
         const x = await models.comment.create({
-            name: nama_pengirim,
-            pesan: komen,
-    })}
-    console.log(send)
-    res.redirect('/komen/komentar')
-    next()
+            comment: a,
+            commenter: b,
+            blogpost_id : "op"
+        })
+    }
+    try {
+        send(name, komen)
+        res.send(200)
+        next()
+    } catch(error) {
+        res.send(error, 500)
+    }
+
 }
 

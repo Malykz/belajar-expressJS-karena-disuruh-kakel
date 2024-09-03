@@ -11,6 +11,6 @@ exports.authJWT = (req, res, next) => {
         next()
     } catch(err) {
         res.clearCookie("login_token")
-        return res.redirect("/login/upload")
+        return res.redirect("/login/")
     }
 }

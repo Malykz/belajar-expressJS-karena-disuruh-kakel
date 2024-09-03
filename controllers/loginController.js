@@ -25,6 +25,6 @@ exports.create_login = (req, res, next) => {
         httpOnly: true
     })
 
-    res.redirect('/komen/upload')
+    res.redirect('/komen/upload') 
     next()
 }
