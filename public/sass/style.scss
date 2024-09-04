@@ -1,3 +1,7 @@
+@function margin_from_container($n) {
+    @return $n - 65px
+}
+
 
 body {
     box-sizing: border-box;
@@ -57,11 +61,26 @@ body {
                         display: flex;
                         margin-bottom: $gap-content;
 
+                        .options {
+                            position: absolute;
+                            margin-left: margin_from_container($cont-witdh);
+                        }
+
                         .profilePic {
                             height: 40px;
                             width: 40px;
                             border-radius: 100%;
-                            background-color: red;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            img {
+                                min-width: 40px;
+                                min-height: 40px;
+                                max-width: 40px;
+                                max-height: 40px;
+                                border-radius: 100%;
+                            }
                         }
 
                         .text {
