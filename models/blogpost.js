@@ -29,7 +29,6 @@ module.exports = (sequelize, DataTypes) => {
   }
   Blogpost.init({
     caption: DataTypes.TEXT,
-    author: DataTypes.STRING,
     imgUrl: DataTypes.STRING,
     author_id : DataTypes.UUID
   }, {

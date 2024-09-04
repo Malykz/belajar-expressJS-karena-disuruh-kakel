@@ -1,6 +1,7 @@
 var exports = module.exports = {}
 const models = require("../models")
 require('dotenv').config()
+var uniqid = require('uniqid')
 // GET
 exports.upload_komen = async (req, res, next) => {
     res.render("form/uploadkomen", {
@@ -28,7 +29,7 @@ exports.send_komen = async (req, res, next) => {
         const x = await models.comment.create({
             comment: a,
             commenter: b,
-            blogpost_id : "op"
+            blogpost_id : uniqid('comment-')
         })
     }
     try {

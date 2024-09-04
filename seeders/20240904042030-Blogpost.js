@@ -5,7 +5,6 @@ var uniqid = require('uniqid')
 /** @type {import('sequelize-cli').Migration} */
 const fields = [{
   id : uniqid("post-"),
-  author : "Jokowi",
   author_id : 12,
   imgUrl : uniqid(),
   caption : "Ini adalah Kepsen",
