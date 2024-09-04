@@ -24,27 +24,29 @@
     font-weight: $weight;
 }
 
+.ctr-flx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
     box-sizing: border-box;
     overflow-x: hidden;
     background-color: #131313 !important;
     height: 2000px;
-
     #form_uploadkomen {
         color: black;
         @include w(100%);
-
         .formulir {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-
             form {
                 width: 40%;
                 min-width: 100px;
                 max-width: 700px;
-            
             }
         }
     }
@@ -52,21 +54,15 @@ body {
         margin-left: 50px;
         margin-top: 50px
     }
-
     #home_blogs {
         font-family: 'Poppins', sans-serif;
         width: 100vw;
-        display: flex;
-        justify-content: center;
-
         $cont-witdh: 450px;
-        $text-padding-left : 8px;
+        $text-padding-left : 10px;
         $gap-content : 10px;
         $border-post: 0.1px solid #514f4f;
-
         .blog-container {
             width: $cont-witdh;
-
             .blog {
                 max-height: max-content;
                 background-color: #252525;
@@ -81,11 +77,9 @@ body {
                     .userInf {
                         height: 50px;
                         margin-bottom: $gap-content;
-
                         .options {
                             margin-right: 4.5%;
                         }                            
-                        
                         .general {
                             .profilePic {
                                 @include h_w(40px, 40px);
@@ -97,39 +91,29 @@ body {
                                 }
                             }
                         }   
-
                         .text {
                             margin-left: 10px;
                             display: grid;
                             grid-template-rows: 1fr;
-
                             span.author {
                                 @include f-s_w(1.1em, 500)
                             }
-
                             span.date {
                                 @include f-s_w(0.8em, 1)
                             }
                         }
                     }
-
-
                     span.caption {
                         @include f-s_w(0.95em, 350);
                     }
                 }
-
                 .body {
-                    // margin-top: $gap-content;
                     width: $cont-witdh;
-                    
                     .image {
-
                         img {
                             max-width: $cont-witdh;
                             min-width: $cont-witdh;
                         }
-
                     }
                 }
                 .comment {
@@ -149,7 +133,7 @@ body {
 
                     span.option {
                         @include h_w(100%, 120px);
-                        @include f-s_c(0.9rem, white)
+                        @include f-s_c(0.9rem, white);
                     }
                 }
         }

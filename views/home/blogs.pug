@@ -1,22 +1,26 @@
 extends ../layout
 
 block content     
- #home_blogs
+ #home_blogs.d-flex.justify-content-center
+
   .blog-container
    each blog in blogs
     .blog.mt-4
      .head
       .userInf.d-flex.justify-content-between.align-items-center
        .general.d-flex
-        .profilePic.d-flex.justify-contet-center.align-items-center
+        .profilePic.d-flex.justify-content-center.align-items-center
           img(src=blog.User.profilePic)
         .text
           span.author #{blog.User.name} 
           span.date 28 August
+
        .options.d-flex.gap-3
         img(src="svg/more-horiz.svg")
         img(src="svg/close.svg")  
+
       span.caption #{blog.caption} 
+
      .body.mt-2
       .image
        img(src=blog.imgUrl)
@@ -27,16 +31,18 @@ block content
       span #Python
 
 
-     .react.d-flex.justify-content-center.mt-2.align-items-center.mb-3
-      span.option.d-flex.justify-content-center.align-items-center
+     .react.mb-3.mt-2.ctr-flx
+      span.option.ctr-flx
        span.text.d-flex.align-items-center.gap-2
         img(src="svg/like.svg") 
         span Like
-      span.option.d-flex.justify-content-center.align-items-center
+
+      span.option.ctr-flx
        span.text.d-flex.align-items-center.gap-2
         img(src="svg/comment.svg") 
         span Comment
-      span.option.d-flex.justify-content-center.align-items-center
+
+      span.option.ctr-flx
        span.text.d-flex.align-items-center.gap-2
         img(src="svg/share.svg")
         span Share
