@@ -11,11 +11,11 @@ block content
         span.close X 
         span.more L
        .profilePic
-        img(src=blog.imgUrl)
+        img(src=blog.User.profilePic)
        .text
-        span.author #{blog.author} 
+        span.author #{blog.User.name} 
         span.date 28 August
       span.caption #{blog.caption} 
      .body
       .image 
-       img(src=blog.img_url)
+       img(src=blog.imgUrl)

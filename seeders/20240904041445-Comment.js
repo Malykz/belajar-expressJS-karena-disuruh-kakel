@@ -6,7 +6,7 @@ const fields = {
   id : uniqid("comment-"),
   comment : "Nagebray",
   commenter : "Jokowi",
-  blogpost_id : "test",
+  blogpost_id : "testk",
   createdAt : Date.now(),
   updatedAt : Date.now()
 }

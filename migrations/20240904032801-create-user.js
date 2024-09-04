@@ -9,17 +9,20 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.UUID
       },
-      userName: {
+      name: {
         type: Sequelize.STRING
       },
-      userJoinDate: {
+      joinDate: {
         type: Sequelize.DATE
       },
-      userAge: {
+      age: {
         type: Sequelize.INTEGER
       },
-      userAuthKey: {
+      authKey: {
         type: Sequelize.UUID
+      },
+      profilePic: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

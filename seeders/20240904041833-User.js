@@ -3,10 +3,11 @@
 var uniqid = require('uniqid')
 
 const fields = [{
-  id : uniqid("user-"),
-  userName : "Jokowi",
-  userAge : 12,
-  userAuthKey : uniqid()
+  id : "test",
+  name : "Jokowi",
+  profilePic : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYJdvMCLnoRNJS71p04s2ahHfBmzcOTIwtQg&shttps://www.kemhan.go.id/wp-content/uploads/2019/10/tmp_6644-20191028_142938-770056681.jpg",
+  Age : 12,
+  AuthKey : uniqid()
 }]
 
 /** @type {import('sequelize-cli').Migration} */
