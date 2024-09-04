@@ -6,16 +6,38 @@ block content
    each blog in blogs
     .blog.mt-4
      .head
-      .userInf
-       .options
-        span.close X 
-        span.more L
-       .profilePic
-        img(src=blog.User.profilePic)
-       .text
-        span.author #{blog.User.name} 
-        span.date 28 August
+      .userInf.d-flex.justify-content-between.align-items-center
+       .general.d-flex
+        .profilePic.d-flex.justify-contet-center.align-items-center
+          img(src=blog.User.profilePic)
+        .text
+          span.author #{blog.User.name} 
+          span.date 28 August
+       .options.d-flex.gap-3
+        img(src="svg/more-horiz.svg")
+        img(src="svg/close.svg")  
       span.caption #{blog.caption} 
-     .body
-      .image 
+     .body.mt-2
+      .image
        img(src=blog.imgUrl)
+
+     .comment.d-flex.align-items-center.pt-2.gap-2
+      span #Javascript
+      span #HTML
+      span #Python
+
+
+     .react.d-flex.justify-content-center.mt-2.align-items-center.mb-3
+      span.option.d-flex.justify-content-center.align-items-center
+       span.text.d-flex.align-items-center.gap-2
+        img(src="svg/like.svg") 
+        span Like
+      span.option.d-flex.justify-content-center.align-items-center
+       span.text.d-flex.align-items-center.gap-2
+        img(src="svg/comment.svg") 
+        span Comment
+      span.option.d-flex.justify-content-center.align-items-center
+       span.text.d-flex.align-items-center.gap-2
+        img(src="svg/share.svg")
+        span Share
+

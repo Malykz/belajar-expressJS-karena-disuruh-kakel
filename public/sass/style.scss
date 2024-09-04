@@ -1,18 +1,38 @@
-@function margin_from_container($n) {
-    @return $n - 65px
+@mixin h_w($height, $width) {
+    height: $height;
+    width: $width;
 }
 
+@mixin h_w_i($height, $width) {
+    max-height: $height;
+    min-height: $height;
+    max-width: $width;
+    min-width: $width;
+}
+
+@mixin w($width) {
+    width: $width;
+}
+
+@mixin f-s_c($size, $color) {
+    font-size: $size;
+    color: $color;
+}
+
+@mixin f-s_w($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
 
 body {
     box-sizing: border-box;
-    // height: 10000vh !important;
     overflow-x: hidden;
     background-color: #131313 !important;
     height: 2000px;
 
     #form_uploadkomen {
         color: black;
-        width: 100vw;
+        @include w(100%);
 
         .formulir {
             display: flex;
@@ -34,18 +54,21 @@ body {
     }
 
     #home_blogs {
+        font-family: 'Poppins', sans-serif;
         width: 100vw;
         display: flex;
         justify-content: center;
 
         $cont-witdh: 450px;
-        $text-padding-left : 15px;
+        $text-padding-left : 8px;
         $gap-content : 10px;
+        $border-post: 0.1px solid #514f4f;
 
         .blog-container {
             width: $cont-witdh;
 
             .blog {
+                max-height: max-content;
                 background-color: #252525;
                 border-radius: 5px;
 
@@ -57,31 +80,23 @@ body {
 
                     .userInf {
                         height: 50px;
-                        align-items: center;
-                        display: flex;
                         margin-bottom: $gap-content;
 
                         .options {
-                            position: absolute;
-                            margin-left: margin_from_container($cont-witdh);
-                        }
-
-                        .profilePic {
-                            height: 40px;
-                            width: 40px;
-                            border-radius: 100%;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-
-                            img {
-                                min-width: 40px;
-                                min-height: 40px;
-                                max-width: 40px;
-                                max-height: 40px;
+                            margin-right: 4.5%;
+                        }                            
+                        
+                        .general {
+                            .profilePic {
+                                @include h_w(40px, 40px);
                                 border-radius: 100%;
+
+                                img {
+                                    @include h_w_i(40px, 40px);
+                                    border-radius: 100%;
+                                }
                             }
-                        }
+                        }   
 
                         .text {
                             margin-left: 10px;
@@ -89,26 +104,23 @@ body {
                             grid-template-rows: 1fr;
 
                             span.author {
-                                font-size: 1.1em;
-                                font-weight: 500;
+                                @include f-s_w(1.1em, 500)
                             }
 
                             span.date {
-                                font-size: 0.8em;
-                                font-weight: 1;
+                                @include f-s_w(0.8em, 1)
                             }
                         }
                     }
 
 
                     span.caption {
-                        font-size: 0.9em;
-                        padding-right: $text-padding-left;
+                        @include f-s_w(0.95em, 350);
                     }
                 }
 
                 .body {
-                    margin-top: $gap-content;
+                    // margin-top: $gap-content;
                     width: $cont-witdh;
                     
                     .image {
@@ -118,6 +130,26 @@ body {
                             min-width: $cont-witdh;
                         }
 
+                    }
+                }
+                .comment {
+                    height: 20px;
+                    @include f-s_c(0.8em, white );
+                    font-weight: 300;
+                    opacity: 90%;
+                    padding-left: $text-padding-left;
+                }
+
+                .react {
+                    height: 43px;
+                    gap: 25px;
+                    margin: 0px 10px 0px 10px;
+                    border-top: 0.1px solid #514f4f;
+                    font-weight: 300;
+
+                    span.option {
+                        @include h_w(100%, 120px);
+                        @include f-s_c(0.9rem, white)
                     }
                 }
         }
